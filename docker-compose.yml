@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mevn-frontend:
+    build: ./frontend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./frontend:/app:ro
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - PORT=4000
+      - VUE_APP_BACKEND_BASE_URL=http://localhost:5000
+  mevn-backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app:ro
+      - /app/node_modules
+    environment:
+      - PORT=5000
+      - FRONTEND_BASE_URL=http://localhost:4000
