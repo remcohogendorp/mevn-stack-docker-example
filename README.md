@@ -1,4 +1,13 @@
 # mevn-stack-docker-example
+
+## How to run
+
+### Prerequisite
+
+[Docker](https://www.docker.com/products/docker-desktop)
+
+### Instructions
+
 To run the docker containers, use:
 ```
 docker-compose up -d
