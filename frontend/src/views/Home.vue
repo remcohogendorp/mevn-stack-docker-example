@@ -1,28 +1,32 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld :msg="msg" />
+    <HelloWorld :msg="message" />
+    {{ message }}
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import HelloWorld from "../components/HelloWorld.vue";
+import { onMounted, ref } from "vue";
 import axios from "axios";
 
-@Options({
-  components: {
-    HelloWorld,
+export default {
+  components: { HelloWorld },
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setup(): any {
+    let message = ref("");
+
+    const getMessage = async () => {
+      await axios.get(process.env.VUE_APP_BACKEND_BASE_URL).then((res) => {
+        message.value = res.data as string;
+      });
+    };
+
+    onMounted(getMessage);
+
+    return { message };
   },
-})
-export default class Home extends Vue {
-
-  msg = "";
-
-  mounted(): void {
-    axios.get(process.env.VUE_APP_BACKEND_BASE_URL).then((res) => {
-      this.msg = res.data as string;
-    });
-  }
-}
+};
 </script>
