@@ -8,7 +8,7 @@
 
 ### Instructions
 
-To run the docker containers:.
+To run the docker containers:
 
 - change mongo.example.env to mongo.env and add the default username/password
 
