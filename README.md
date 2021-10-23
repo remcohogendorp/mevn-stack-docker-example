@@ -27,7 +27,7 @@ docker-compose down
 ## Todo
 
 - ~~Add mongodb container and connect it with the backend~~
-- Configure different production en development environment
+- Configure different production and development environment
 
 ## Credits
 
