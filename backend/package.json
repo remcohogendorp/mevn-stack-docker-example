@@ -5,16 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon -L index.js"
+    "serve": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "compile": "npx tsc",
+    "run": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.13",
+    "tsc-watch": "^4.5.0"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "typescript": "^4.4.4"
   }
 }

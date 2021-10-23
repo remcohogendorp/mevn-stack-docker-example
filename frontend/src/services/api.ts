@@ -1,8 +1,8 @@
 import axios from "axios";
-import { BACKEND_BASE_URL } from "../config/config";
+import { BACKEND_IP, BACKEND_PORT } from "../config/config";
 
 const instance = axios.create({
-  baseURL: BACKEND_BASE_URL,
+  baseURL: `${BACKEND_IP}:${BACKEND_PORT}`,
 });
 
 export const getMessage = async (): Promise<string> => {

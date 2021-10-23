@@ -1,6 +1,6 @@
 version: "3"
 services:
-  mevn-frontend:
+  frontend:
     build: ./frontend
     ports:
       - "4000:4000"
@@ -10,14 +10,31 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
       - PORT=4000
-      - VUE_APP_BACKEND_BASE_URL=http://localhost:5000
-  mevn-backend:
+      - VUE_APP_BACKEND_IP=http://localhost
+      - VUE_APP_BACKEND_PORT=5000
+    depends_on:
+      - backend
+      - mongo
+
+  backend:
     build: ./backend
     ports:
       - "5000:5000"
     volumes:
-      - ./backend:/app:ro
+      - ./backend:/app
       - /app/node_modules
     environment:
       - PORT=5000
-      - FRONTEND_BASE_URL=http://localhost:4000
+      - FRONTEND_PORT=4000
+      - FRONTEND_IP=http://localhost
+    env_file:
+      - mongo.env
+  mongo:
+    image: mongo
+    env_file:
+      - mongo.env
+    volumes:
+      - mongo-db:/data/db
+
+volumes:
+  mongo-db:

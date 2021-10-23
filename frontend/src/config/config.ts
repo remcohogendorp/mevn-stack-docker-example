@@ -1,3 +1,4 @@
-const BACKEND_BASE_URL = process.env.VUE_APP_BACKEND_BASE_URL as string;
+const BACKEND_IP = process.env.VUE_APP_BACKEND_IP;
+const BACKEND_PORT = process.env.VUE_APP_BACKEND_PORT;
 
-export { BACKEND_BASE_URL };
+export { BACKEND_IP, BACKEND_PORT };
