@@ -8,7 +8,7 @@
 
 ### Instructions
 
-To run the docker containers:.
+To run the docker containers:
 
 - change mongo.example.env to mongo.env and add the default username/password
 
@@ -35,7 +35,7 @@ docker-compose down
 ## Todo
 
 - ~~Add mongodb container and connect it with the backend~~
-- ~~Configure different production en development environment~~
+- ~~Configure different production and development environment~~
 
 ## Credits
 
