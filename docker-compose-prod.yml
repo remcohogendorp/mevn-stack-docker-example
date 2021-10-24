@@ -1,0 +1,22 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: ./frontend
+      target: prod
+      args:
+        - VUE_APP_BACKEND_IP=http://localhost
+        - VUE_APP_BACKEND_PORT=5000
+    ports:
+      - "4000:80"
+  backend:
+    build:
+      context: ./backend
+      target: prod
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - FRONTEND_PORT=4000
+      - FRONTEND_IP=http://localhost
+  mongo:

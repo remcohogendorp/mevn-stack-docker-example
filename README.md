@@ -12,13 +12,21 @@ To run the docker containers:.
 
 - change mongo.example.env to mongo.env and add the default username/password
 
-And use the commands:
+### Commands
+
+> To run the docker container in development mode, use:
 
 ```
-docker-compose up -d
+docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d --build
 ```
 
-To stop and remove the docker containers, use:
+> To run the docker container in production mode, use:
+
+```
+docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build
+```
+
+> To stop and remove the docker containers, use:
 
 ```
 docker-compose down
@@ -27,7 +35,7 @@ docker-compose down
 ## Todo
 
 - ~~Add mongodb container and connect it with the backend~~
-- Configure different production en development environment
+- ~~Configure different production en development environment~~
 
 ## Credits
 
