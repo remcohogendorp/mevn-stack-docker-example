@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import routes from "./routes/index.js";
+import routes from "./routes/index";
 import {
   FRONTEND_IP,
   FRONTEND_PORT,
@@ -10,7 +10,7 @@ import {
   MONGO_PORT,
   MONGO_USERNAME,
   PORT,
-} from "./config/config.js";
+} from "./config/config";
 import { connect } from "mongoose";
 const app = express();
 
