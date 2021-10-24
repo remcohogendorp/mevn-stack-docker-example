@@ -16,7 +16,7 @@ services:
       - /app/node_modules
   backend:
     build:
-      context: ./frontend
+      context: ./backend
       target: dev
     ports:
       - "5000:5000"

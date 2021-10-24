@@ -20,4 +20,3 @@ COPY --from=builder /app/dist ./
 ENV PORT 5000
 EXPOSE $PORT
 CMD ["node","index.js"]
-# CMD ["sleep", "1d"]
