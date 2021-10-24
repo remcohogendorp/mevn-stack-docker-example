@@ -42,9 +42,8 @@ docker-compose down
 Great tutorials:
 
 > Learn Docker - DevOps with Node.js & Express
-
 - https://youtu.be/9zUHg7xjIqQ
-  > Vue 3 with TypeScript Tutorial (playlist)
+> Vue 3 with TypeScript Tutorial (playlist)
 - https://youtu.be/JfI5PISLr9w
-  > TypeScript in 100 Seconds
+> TypeScript in 100 Seconds
 - https://youtu.be/zQnBQ4tB3ZA
